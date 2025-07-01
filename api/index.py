@@ -87,6 +87,19 @@ def add_cache_headers(response, max_age=3600):
     return response
 
 
+@app.route("/", methods=["GET"])
+def root():
+    """Root endpoint for basic testing"""
+    return jsonify({
+        "message": "Water Polo Rankings API is running!", 
+        "endpoints": [
+            "/api/health",
+            "/api/MWP/matrix",
+            "/api/WWP/matrix",
+            "/api/cache/info"
+        ]
+    }), 200
+
 @app.route("/api/MWP/matrix", methods=["GET"])
 def get_matrix():
     try:
