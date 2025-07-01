@@ -47,10 +47,10 @@ WWP_RANK_ORDER = [str(i) for i in range(1, 26)] + ["unranked"]
 # Load rankings data from files in the same directory
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-with open(os.path.join(current_dir, "mens_waterpolo_rankings.json"), "r", encoding="utf-8") as f:
+with open("mens_waterpolo_rankings.json", "r", encoding="utf-8") as f:
     rankings = json.load(f)
 
-with open(os.path.join(current_dir, "womens_waterpolo_rankings.json"), "r", encoding="utf-8") as f:
+with open("womens_waterpolo_rankings.json", "r", encoding="utf-8") as f:
     wwp_rankings = json.load(f)
 
 # Cache management functions
